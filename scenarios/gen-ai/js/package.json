@@ -5,11 +5,13 @@
   "license": "Apache-2.0",
   "workspaces": [
     "openai/*",
-    "vercel-ai/*"
+    "vercel-ai/*",
+    "bedrock/*"
   ],
   "scripts": {
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "test": "node --test bedrock/scenarios/inference.test.js"
   },
   "devDependencies": {
     "prettier": "3.9.10"

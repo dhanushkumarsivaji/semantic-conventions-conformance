@@ -1,0 +1,26 @@
+# Copyright The OpenTelemetry Authors
+# SPDX-License-Identifier: Apache-2.0
+
+runner: genai-conformance
+instrumented_library: "@aws-sdk/client-bedrock-runtime"
+instrumentation_library: "@opentelemetry/instrumentation-aws-sdk"
+
+setup: otel-conformance-js install
+
+server:
+  run: genai-mock-server --port ${PORT}
+
+env:
+  # Per-service override so only bedrock-runtime goes to the mock. Credentials
+  # are needed to sign the request; nothing verifies them.
+  AWS_ENDPOINT_URL_BEDROCK_RUNTIME: ${MOCK_SERVER_URL}
+  AWS_ACCESS_KEY_ID: test_access_key_id
+  AWS_SECRET_ACCESS_KEY: test_secret_access_key
+  AWS_DEFAULT_REGION: us-east-1
+  # This instrumentation reads the flag as a boolean, matching the Python
+  # botocore directory.
+  OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT: "true"
+
+scenarios:
+  inference:
+    run: node inference.js

@@ -149,6 +149,7 @@ files, with these implementations:
 | --- | --- | --- |
 | `openai` | inference, streaming, tool_calling, automatic_tool_calling, structured_output, multimodal, embeddings | `opentelemetry-openai` |
 | `vercel-ai` | inference, streaming, tool_calling, automatic_tool_calling, structured_output, multimodal, embeddings | `native` (`@ai-sdk/otel`, the AI SDK's first-party telemetry integration) |
+| `bedrock` | Bedrock Converse: inference (streaming and tool_calling deferred) | `opentelemetry-aws-sdk` (`@opentelemetry/instrumentation-aws-sdk`) |
 
 The JavaScript domain is one npm workspace with a committed lockfile, using
 the [Node launcher and SDK bootstrap](../../tools/js/README.md). Workloads
@@ -159,9 +160,10 @@ below 7. Vercel uses AI SDK 7 and its first-party OpenTelemetry integration,
 which records inputs and outputs by default when registered.
 
 ```sh
-pip install -e tools/js
+pip install -e tools/js -e tools/runner -e tools/gen-ai/mock-server -e tools/gen-ai/runner
 otel-conformance scenarios/gen-ai/js/openai/opentelemetry-openai --report-only
 otel-conformance scenarios/gen-ai/js/vercel-ai/native --report-only
+otel-conformance scenarios/gen-ai/js/bedrock/opentelemetry-aws-sdk --report-only
 ```
 
 ## Third-party and native instrumentations

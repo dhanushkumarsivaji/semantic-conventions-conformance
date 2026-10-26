@@ -1,0 +1,12 @@
+{
+  "name": "@otel-conformance/bedrock-opentelemetry-aws-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@otel-conformance/bedrock-scenarios": "*",
+    "@otel-conformance/scenario-sdk": "file:../../../../../tools/js/scenario-sdk",
+    "@opentelemetry/instrumentation-aws-sdk": "0.78.0",
+    "@otel-conformance/scenario-support": "file:../../../../../tools/js/scenario-support"
+  }
+}

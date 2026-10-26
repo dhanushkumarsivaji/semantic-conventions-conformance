@@ -1,0 +1,233 @@
+{
+  "spans": {
+    "gen_ai.client.inference": [
+      "gen_ai.operation.name",
+      "gen_ai.request.max_tokens",
+      "gen_ai.request.model",
+      "gen_ai.request.stop_sequences",
+      "gen_ai.request.temperature",
+      "gen_ai.request.top_p",
+      "gen_ai.response.finish_reasons",
+      "gen_ai.usage.input_tokens",
+      "gen_ai.usage.output_tokens"
+    ]
+  },
+  "events": {},
+  "metrics": {
+    "gen_ai.client.operation.duration": [
+      "gen_ai.operation.name",
+      "gen_ai.request.model"
+    ]
+  },
+  "entities": {},
+  "findings": [
+    {
+      "id": "instrumentation_scope_schema_url_missing",
+      "message": "Instrumentation scope '@opentelemetry/instrumentation-aws-sdk' does not have schema_url.",
+      "signal_type": "instrumentation_scope",
+      "signal_name": "@opentelemetry/instrumentation-aws-sdk",
+      "context": {
+        "actual": null,
+        "expected": {
+          "present": true
+        }
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'gen_ai.system' does not exist in the registry.",
+      "signal_type": "metric",
+      "signal_name": "gen_ai.client.operation.duration",
+      "context": {
+        "attribute_key": "gen_ai.system"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'gen_ai.system' does not exist in the registry.",
+      "signal_type": "metric",
+      "signal_name": "gen_ai.client.token.usage",
+      "context": {
+        "attribute_key": "gen_ai.system"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'gen_ai.token.type' does not exist in the registry.",
+      "signal_type": "metric",
+      "signal_name": "gen_ai.client.token.usage",
+      "context": {
+        "attribute_key": "gen_ai.token.type"
+      }
+    },
+    {
+      "id": "missing_metric",
+      "message": "Metric does not exist in the registry.",
+      "signal_type": "metric",
+      "signal_name": "gen_ai.client.token.usage"
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'host.arch' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "host.arch"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'host.id' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "host.id"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'host.name' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "host.name"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.command' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.command"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.command_args' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.command_args"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.executable.name' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.executable.name"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.executable.path' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.executable.path"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.owner' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.owner"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.pid' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.pid"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.runtime.description' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.runtime.description"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.runtime.name' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.runtime.name"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'process.runtime.version' does not exist in the registry.",
+      "signal_type": "resource",
+      "context": {
+        "attribute_key": "process.runtime.version"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'gen_ai.system' does not exist in the registry.",
+      "signal_type": "span",
+      "signal_name": "chat anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "context": {
+        "attribute_key": "gen_ai.system"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'rpc.service' does not exist in the registry.",
+      "signal_type": "span",
+      "signal_name": "chat anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "context": {
+        "attribute_key": "rpc.service"
+      }
+    },
+    {
+      "id": "missing_attribute",
+      "message": "Attribute 'rpc.system' does not exist in the registry.",
+      "signal_type": "span",
+      "signal_name": "chat anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "context": {
+        "attribute_key": "rpc.system"
+      }
+    },
+    {
+      "id": "genai_expected_attribute_missing",
+      "message": "Span 'chat anthropic.claude-3-5-sonnet-20240620-v1:0' (operation 'chat') is missing expected attribute 'gen_ai.provider.name'",
+      "signal_type": "span",
+      "signal_name": "chat anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "context": {
+        "missing_attribute": "gen_ai.provider.name",
+        "operation": "chat"
+      }
+    },
+    {
+      "id": "genai_expected_attribute_missing",
+      "message": "Span 'chat anthropic.claude-3-5-sonnet-20240620-v1:0' (operation 'chat') is missing expected attribute 'gen_ai.response.id'",
+      "signal_type": "span",
+      "signal_name": "chat anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "context": {
+        "missing_attribute": "gen_ai.response.id",
+        "operation": "chat"
+      }
+    },
+    {
+      "id": "genai_expected_attribute_missing",
+      "message": "Span 'chat anthropic.claude-3-5-sonnet-20240620-v1:0' (operation 'chat') is missing expected attribute 'gen_ai.response.model'",
+      "signal_type": "span",
+      "signal_name": "chat anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "context": {
+        "missing_attribute": "gen_ai.response.model",
+        "operation": "chat"
+      }
+    },
+    {
+      "id": "genai_expected_attribute_missing",
+      "message": "Span 'chat anthropic.claude-3-5-sonnet-20240620-v1:0' (operation 'chat') is missing expected attribute 'server.address'",
+      "signal_type": "span",
+      "signal_name": "chat anthropic.claude-3-5-sonnet-20240620-v1:0",
+      "context": {
+        "missing_attribute": "server.address",
+        "operation": "chat"
+      }
+    }
+  ]
+}

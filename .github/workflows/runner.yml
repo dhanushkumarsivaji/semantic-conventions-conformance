@@ -133,6 +133,7 @@ jobs:
           npm --prefix scenarios/http/js test
           npm --prefix scenarios/gen-ai/js ci
           npm --prefix scenarios/gen-ai/js run format:check
+          npm --prefix scenarios/gen-ai/js test
 
       - name: Check the site
         run: |
